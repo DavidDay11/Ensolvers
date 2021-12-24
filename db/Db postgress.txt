@@ -1,0 +1,15 @@
+create table lists
+(
+	idlist serial primary key,
+	description varchar(100)
+	
+	
+)
+
+create table tasks(
+	idtask serial primary key,
+	idlist serial,
+	description varchar(100),
+	constraint fk_task_list foreign key (idlist)
+	references lists(idlist)
+)
